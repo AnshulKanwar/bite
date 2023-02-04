@@ -3,7 +3,7 @@ import Pill from "./Pill"
 
 const Rating = ({ rating }) => {
   return (
-    <Pill bg="#f5be2f">
+    <Pill bg="#00AA13">
       <Text style={styles.text}>{rating}/5.0</Text>
     </Pill>
   )

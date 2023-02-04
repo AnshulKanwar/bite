@@ -3,7 +3,7 @@ import Pill from "./Pill"
 
 const Offer = ({ offer }) => {
   return (
-    <Pill bg="#255cea">
+    <Pill bg="#00AED6">
       <Text style={styles.text}>{offer}</Text>
     </Pill>
   )

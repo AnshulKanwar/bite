@@ -1,16 +1,21 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Image } from "react-native";
 import Offer from "./Offer";
 import Price from "./Price";
 import Rating from "./Rating";
 
 const RestaurantItem = ({ data }) => {
-  const { name, serveTimeMin, serveTimeMax, distance, rating, offers, price } =
+  const { name, serveTimeMin, serveTimeMax, distance, rating, offers, price, image } =
     data;
 
   return (
     <View style={styles.container}>
       <View styls={styles.left}>
-        <View style={styles.image}></View>
+      <Image
+        style={styles.image}
+        source={{
+          uri: image,
+        }}
+      />
       </View>
       <View style={styles.right}>
         <View>
@@ -56,7 +61,6 @@ const styles = StyleSheet.create({
   image: {
     width: 150,
     height: 150,
-    backgroundColor: "#dde0e5",
     borderRadius: 10,
   },
   name: {
