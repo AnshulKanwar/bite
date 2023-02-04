@@ -1,11 +1,19 @@
-import { Text, View } from "react-native"
+import { StyleSheet, Text } from "react-native"
+import Pill from "./Pill"
 
-const Rating = () => {
+const Rating = ({ rating }) => {
   return (
-    <View>
-      <Text>Rating</Text>
-    </View>
+    <Pill bg="#f5be2f">
+      <Text style={styles.text}>{rating}/5.0</Text>
+    </Pill>
   )
 }
+
+const styles = StyleSheet.create({
+  text: {
+    color: "#fff",
+    fontSize: 11,
+  }
+})
 
 export default Rating

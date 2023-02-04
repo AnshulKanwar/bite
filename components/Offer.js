@@ -1,11 +1,19 @@
-import { Text, View } from "react-native"
+import { StyleSheet, Text } from "react-native"
+import Pill from "./Pill"
 
-const Offer = () => {
+const Offer = ({ offer }) => {
   return (
-    <View>
-      <Text>Offer</Text>
-    </View>
+    <Pill bg="#255cea">
+      <Text style={styles.text}>{offer}</Text>
+    </Pill>
   )
 }
+
+const styles = StyleSheet.create({
+  text: {
+    color: "#fff",
+    fontSize: 11,
+  }
+})
 
 export default Offer

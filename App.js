@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
 import HomeScreen from "./screen/HomeScreen";
+import OrdersScreen from "./screen/OrdersScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,6 +18,8 @@ export default function App() {
 
             if (route.name === "Home") {
               iconName = "home";
+            } else if (route.name === "Orders") {
+              iconName = "coffee"
             }
 
             return <Feather name={iconName} size={size} color={color} />;
@@ -24,6 +27,7 @@ export default function App() {
         })}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Orders" component={OrdersScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -10,6 +10,7 @@ const restaurants = [
     distance: 120,
     rating: 4.8,
     offers: ["50% off upto ₹100"],
+    price: "2",
   },
   {
     id: 2,
@@ -18,6 +19,8 @@ const restaurants = [
     serveTimeMax: 15,
     distance: 60,
     rating: 4.2,
+    offers: [],
+    price: "4",
   },
   {
     id: 3,
@@ -27,6 +30,17 @@ const restaurants = [
     distance: 65,
     rating: 3.8,
     offers: ["50% off upto ₹100"],
+    price: "3",
+  },
+  {
+    id: 4,
+    name: "Ahaar",
+    serveTimeMin: 15,
+    serveTimeMax: 25,
+    distance: 115,
+    rating: 4.5,
+    offers: ["25% off upto ₹100"],
+    price: "2",
   },
 ];
 
@@ -36,6 +50,7 @@ const RestaurantList = () => {
       style={styles.container}
       data={restaurants}
       renderItem={({ item }) => <RestaurantItem data={item} />}
+      keyExtractor={item => item.id}
     />
   );
 };

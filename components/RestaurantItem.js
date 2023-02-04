@@ -1,9 +1,11 @@
 import { Text, View, StyleSheet } from "react-native";
 import Offer from "./Offer";
+import Price from "./Price";
 import Rating from "./Rating";
 
 const RestaurantItem = ({ data }) => {
-  const { name, serveTimeMin, serveTimeMax, distance, rating, offers } = data;
+  const { name, serveTimeMin, serveTimeMax, distance, rating, offers, price } =
+    data;
 
   return (
     <View style={styles.container}>
@@ -11,14 +13,27 @@ const RestaurantItem = ({ data }) => {
         <View style={styles.image}></View>
       </View>
       <View style={styles.right}>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.time}>
-          {serveTimeMin} - {serveTimeMax} min • {distance} m
-        </Text>
         <View>
-          <Offer />
-          <Rating />
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.time}>
+            {serveTimeMin} - {serveTimeMax} min • {distance} m
+          </Text>
+          <View style={styles.tags}>
+            {offers.length > 0 && (
+              <View style={styles.offers}>
+                {offers.map((offer) => (
+                  <View id={offer}>
+                    <Offer offer={offer} />
+                  </View>
+                ))}
+              </View>
+            )}
+            <View style={styles.rating}>
+              <Rating rating={rating} />
+            </View>
+          </View>
         </View>
+        <Price price={price} />
       </View>
     </View>
   );
@@ -30,11 +45,13 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 10,
     marginVertical: 10,
-    padding: 10,
+    marginHorizontal: 15,
+    padding: 15,
   },
   left: {},
   right: {
-    marginLeft: 15,
+    marginLeft: 18,
+    justifyContent: "space-between",
   },
   image: {
     width: 150,
@@ -49,6 +66,14 @@ const styles = StyleSheet.create({
   time: {
     marginTop: 8,
     color: "#a3a9b7",
+  },
+  tags: {
+    // flexDirection: "row",
+    marginTop: 8,
+    alignItems: "flex-start",
+  },
+  offers: {
+    marginBottom: 6,
   },
 });
 
