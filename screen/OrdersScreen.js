@@ -35,10 +35,10 @@ const OrdersScreen = () => {
         <View style={styles.mainOrder}>
           <Text style={styles.resName}>Jaggi</Text>
           {
-            cart.map((element) => {
+            cart.map((element, index) => {
               total += element.amount;
               return (
-                <View style={styles.row}>
+                <View style={styles.row} key={index}>
                   <Text style={styles.txt}>{element.quantity} x {element.name}</Text>
                   <Text style={styles.txt}>₹{element.amount}</Text>
                 </View>

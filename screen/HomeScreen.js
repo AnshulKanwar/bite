@@ -1,10 +1,10 @@
-import { StyleSheet, View, Text, SafeAreaView } from "react-native";
+import { StyleSheet, View, Text, SafeAreaView, StatusBar } from "react-native";
 import MutedText from "../components/MutedText";
 import RestaurantsList from "../components/RestaurantList";
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.AndroidSafeArea}>
       <Text style={styles.logo}>Bite.</Text>
       <Text style={styles.greeting}>Good Morning, Kunal</Text>
       <RestaurantsList />
@@ -25,7 +25,16 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginBottom: 10,
     color: "#b2b7c6"
+  },
+  AndroidSafeArea: {
+    flex: 1,
+    backgroundColor: "white",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
   }
 });
+
+const style = StyleSheet.create({
+  
+})
 
 export default HomeScreen;
