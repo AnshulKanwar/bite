@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { Text, View, StyleSheet, Pressable } from "react-native";
+import { Text, View, StyleSheet, Pressable, Image } from "react-native";
 import MutedText from "./MutedText";
 import Offer from "./Offer";
 import Price from "./Price";
@@ -19,7 +19,12 @@ const RestaurantItem = ({ data }) => {
     >
       <View style={styles.container}>
         <View styls={styles.left}>
-          <View style={styles.image}></View>
+      <Image
+        style={styles.image}
+        source={{
+          uri: image,
+        }}
+      />
         </View>
         <View style={styles.right}>
           <View>
