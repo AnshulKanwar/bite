@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
 import HomeStackScreen from "./screen/HomeStackScreen";
 import OrdersScreen from "./screen/OrdersScreen";
-import MoreScreen from "./screen/MoreScreen";
+import MoreStackScreen from "./screen/MoreStackScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,10 +19,10 @@ export default function App() {
 
             if (route.name === "HomeStack") {
               iconName = "home";
-            } else if (route.name === "Orders") {
-              iconName = "coffee"
-            } else if (route.name === "More") {
-              iconName = "more-horizontal"
+            } else if (route.name === "Cart") {
+              iconName = "shopping-cart";
+            } else if (route.name === "MoreStack") {
+              iconName = "more-horizontal";
             }
 
             return <Feather name={iconName} size={size} color={color} />;
@@ -34,8 +34,12 @@ export default function App() {
           options={{ title: "Home" }}
           component={HomeStackScreen}
         />
-        <Tab.Screen name="Orders" component={OrdersScreen} />
-        <Tab.Screen name="More" component={MoreScreen} />
+        <Tab.Screen name="Cart" component={OrdersScreen} />
+        <Tab.Screen
+          name="MoreStack"
+          options={{ title: "More" }}
+          component={MoreStackScreen}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

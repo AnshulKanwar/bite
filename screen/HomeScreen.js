@@ -1,9 +1,31 @@
-import RestaurantsList from "../components/RestaurantList"
+import { StyleSheet, View, Text, SafeAreaView } from "react-native";
+import MutedText from "../components/MutedText";
+import RestaurantsList from "../components/RestaurantList";
 
 const HomeScreen = () => {
   return (
-    <RestaurantsList />
-  )
-}
+    <SafeAreaView>
+      <Text style={styles.logo}>Bite.</Text>
+      <Text style={styles.greeting}>Good Morning, Kunal</Text>
+      <RestaurantsList />
+    </SafeAreaView>
+  );
+};
 
-export default HomeScreen
+const styles = StyleSheet.create({
+  logo: {
+    fontSize: 40,
+    fontWeight: "bold",
+    marginLeft: 15,
+    marginTop: 10,
+  },
+  greeting: {
+    fontSize: 30,
+    fontWeight: '700',
+    marginLeft: 15,
+    marginBottom: 10,
+    color: "#b2b7c6"
+  }
+});
+
+export default HomeScreen;
