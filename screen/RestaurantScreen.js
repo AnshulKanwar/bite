@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   image: {
     height: 300,
-    opacity: 0.5
+    opacity: 0.7
     // backgroundColor: "#c3a587",
   },
   dark: {

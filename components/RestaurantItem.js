@@ -18,7 +18,7 @@ const RestaurantItem = ({ data }) => {
     price,
     image,
   } = data;
-  console.log(name)
+
   return (
     <Pressable
       onPress={() => {
