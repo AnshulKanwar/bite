@@ -19,8 +19,8 @@ export default function App() {
 
             if (route.name === "HomeStack") {
               iconName = "home";
-            } else if (route.name === "Orders") {
-              iconName = "coffee";
+            } else if (route.name === "Cart") {
+              iconName = "shopping-cart";
             } else if (route.name === "MoreStack") {
               iconName = "more-horizontal";
             }
@@ -34,7 +34,7 @@ export default function App() {
           options={{ title: "Home" }}
           component={HomeStackScreen}
         />
-        <Tab.Screen name="Orders" component={OrdersScreen} />
+        <Tab.Screen name="Cart" component={OrdersScreen} />
         <Tab.Screen
           name="MoreStack"
           options={{ title: "More" }}
