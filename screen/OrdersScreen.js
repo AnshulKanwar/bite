@@ -1,9 +1,20 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Switch } from "react-native";
+import { useState } from "react";
+import { Feather } from "@expo/vector-icons"
 
 const OrdersScreen = () => {
-
-  let total = 0;
-
+  
+  let sum = 0
+  const [isChecked, setIsChecked] = useState(false)
+  const [total, settotal] = useState(0)
+  const toggleIsChecked = () => {
+    if(isChecked)
+      settotal(total - 30)
+    else
+      settotal(total + 30)
+    setIsChecked(value => !value)
+  }
+  
   const cart = [
     {
       name: "Cheese French Fries",
@@ -36,7 +47,7 @@ const OrdersScreen = () => {
           <Text style={styles.resName}>Jaggi</Text>
           {
             cart.map((element, index) => {
-              total += element.amount;
+              sum += element.amount;
               return (
                 <View style={styles.row} key={index}>
                   <Text style={styles.txt}>{element.quantity} x {element.name}</Text>
@@ -45,24 +56,34 @@ const OrdersScreen = () => {
               )
             })
           }
-        </View> 
+        </View>
         <View style={styles.container}>
           <View style={styles.mainOrder}>
-              <View style={styles.row}>
-                <Text style={styles.boldtxt}>Subtotal</Text>
-                <Text style={styles.boldtxt}>₹{total}</Text>
-              </View>
-              <View style={styles.row}>
-                <Text style={styles.txt}>GST (18%)</Text>
-                <Text style={styles.txt}>₹{Math.ceil(0.18*total)}</Text>
-              </View>
-              <View style={styles.row}>
-                <Text style={styles.boldtxt}>Grand Total</Text>
-                <Text style={styles.boldtxt}>₹{total + Math.ceil(0.18*total)}</Text>
-              </View>
-            </View> 
+            <Text style={styles.resName}>Important <Feather name="alert-triangle" size={20}/> </Text>
+            <Text style={styles.row}>Your table will be reserved for 30 minutes after 15 minutes of placing your order</Text>
+            <View style={styles.row}>
+              <Text style={styles.txt}>Reserve table</Text>
+              <Text style={styles.txt}> <Switch value={isChecked} onValueChange={toggleIsChecked} /> </Text>
+            </View>
           </View>
         </View>
+        <View style={styles.container}>
+          <View style={styles.mainOrder}>
+            <View style={styles.row}>
+              <Text style={styles.boldtxt}>Subtotal</Text>
+              <Text style={styles.boldtxt}>₹{total + sum}</Text>
+            </View>
+            <View style={styles.row}>
+              <Text style={styles.txt}>GST (18%)</Text>
+              <Text style={styles.txt}>₹{Math.ceil(0.18*(total + sum))}</Text>
+            </View>
+            <View style={styles.row}>
+              <Text style={styles.boldtxt}>Grand Total</Text>
+              <Text style={styles.boldtxt}>₹{total + Math.ceil(0.18*(total + sum)) + sum}</Text>
+            </View>
+          </View> 
+        </View>
+      </View>
     </View>
   );
 };
@@ -73,7 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 20,
-    paddingBottom: 20
+    // paddingBottom: 20
   },
   heading: {
     margin: 20,
@@ -95,6 +116,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingTop: 5,
+    fontSize: 16
   },
   resName: {
     paddingLeft: 20,
