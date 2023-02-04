@@ -1,7 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MonthlyPackagesScreen from "./MonthlyPackagesScreen";
 import MoreScreen from "./MoreScreen";
-import RestauranScreen from "./RestaurantScreen";
 
 const Stack = createNativeStackNavigator();
 
