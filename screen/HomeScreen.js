@@ -6,7 +6,7 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.AndroidSafeArea}>
       <Text style={styles.logo}>Bite.</Text>
-      <Text style={styles.greeting}>Good Morning, Kunal</Text>
+      <Text style={styles.greeting}>Good Morning, Chad</Text>
       <RestaurantsList />
     </SafeAreaView>
   );
