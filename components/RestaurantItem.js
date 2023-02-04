@@ -8,8 +8,16 @@ import Rating from "./Rating";
 const RestaurantItem = ({ data }) => {
   const navigation = useNavigation();
 
-  const { name, serveTimeMin, serveTimeMax, distance, rating, offers, price } =
-    data;
+  const {
+    name,
+    serveTimeMin,
+    serveTimeMax,
+    distance,
+    rating,
+    offers,
+    price,
+    image,
+  } = data;
 
   return (
     <Pressable
@@ -19,12 +27,12 @@ const RestaurantItem = ({ data }) => {
     >
       <View style={styles.container}>
         <View styls={styles.left}>
-      <Image
-        style={styles.image}
-        source={{
-          uri: image,
-        }}
-      />
+          <Image
+            style={styles.image}
+            source={{
+              uri: image,
+            }}
+          />
         </View>
         <View style={styles.right}>
           <View>

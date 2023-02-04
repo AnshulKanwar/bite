@@ -11,7 +11,7 @@ const restaurants = [
     rating: 4.8,
     offers: ["50% off upto ₹100"],
     price: "2",
-    image: 
+    image:
       "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
@@ -58,7 +58,7 @@ const RestaurantList = () => {
       style={styles.container}
       data={restaurants}
       renderItem={({ item }) => <RestaurantItem data={item} />}
-      keyExtractor={item => item.id}
+      keyExtractor={(item) => item.id}
     />
   );
 };

@@ -25,7 +25,6 @@ const RestaurantScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#f0f1fe",
   },
   backButton: {
@@ -46,6 +45,7 @@ const styles = StyleSheet.create({
   content: {
     marginTop: 40,
     marginHorizontal: 30,
+    height: 400,
   },
   name: {
     fontSize: 40,

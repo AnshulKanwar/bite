@@ -15,7 +15,9 @@ const Stepper = () => {
     <View style={styles.container}>
       {number === 0 ? (
         <Pressable onPress={() => increment(1)}>
+          <View>
           <Text>Add</Text>
+          </View>
         </Pressable>
       ) : (
         <View style={styles.buttonGroup}>
