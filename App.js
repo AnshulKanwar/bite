@@ -20,9 +20,9 @@ export default function App() {
             if (route.name === "HomeStack") {
               iconName = "home";
             } else if (route.name === "Orders") {
-              iconName = "coffee";
+              iconName = "coffee"
             } else if (route.name === "More") {
-              iconName = "more-horizontal";
+              iconName = "more-vertical"
             }
 
             return <Feather name={iconName} size={size} color={color} />;
