@@ -1,18 +1,22 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import Menu from "../components/Menu";
 import { useNavigation } from "@react-navigation/native";
 
-const name = "WrapChick";
-
-const RestaurantScreen = () => {
+// const name = "WrapChick";
+const RestaurantScreen = ({ route }) => {
+  const { name, image } = route.params
   const navigation = useNavigation();
-
   return (
     <View style={styles.container}>
-      <View style={styles.image}></View>
+      <View style={styles.dark}>
+        <Image style={styles.image} source={{
+            uri: image
+          }} 
+        />
+      </View>
       <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
-        <Feather name="chevron-left" size={24} color="#007aff" />
+        <Feather name="chevron-left" size={24} color="#dde0e5" />
         <Text style={styles.buttonText}>Back</Text>
       </Pressable>
       <View style={styles.content}>
@@ -35,12 +39,16 @@ const styles = StyleSheet.create({
     left: 25,
   },
   buttonText: {
-    color: "#007aff",
+    color: "#dde0e5",
     fontSize: 16,
   },
   image: {
     height: 300,
-    backgroundColor: "#c3a587",
+    opacity: 0.5
+    // backgroundColor: "#c3a587",
+  },
+  dark: {
+    backgroundColor: "black"
   },
   content: {
     marginTop: 40,
@@ -52,6 +60,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     position: "absolute",
     top: -120,
+    color: "#dde0e5"
   },
 });
 

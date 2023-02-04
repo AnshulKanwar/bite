@@ -18,11 +18,11 @@ const RestaurantItem = ({ data }) => {
     price,
     image,
   } = data;
-
+  console.log(name)
   return (
     <Pressable
       onPress={() => {
-        navigation.navigate("Restaurant");
+        navigation.navigate("Restaurant", {name: name, image: image});
       }}
     >
       <View style={styles.container}>
