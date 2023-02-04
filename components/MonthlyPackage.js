@@ -16,8 +16,8 @@ const MonthlyPackage = ({ mpackage }) => {
             <Text style={styles.dish}>{dish}</Text>
             <MutedText>{duration}</MutedText>
             <View style={styles.allPrice}>
-              <Text style={styles.price}>{price}</Text>
-              <Text>{discountedPrice}</Text>
+              <Text style={styles.price}>₹{price}</Text>
+              <Text>₹{discountedPrice}</Text>
             </View>
           </View>
           <Pill bg="#00AED6">
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
   },
   price: {
     marginRight: 5,
+    textDecorationLine: "line-through",
   },
   percentage: {
     color: "#fff"
