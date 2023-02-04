@@ -7,7 +7,7 @@ const MoreScreen = ({ navigation }) => {
         <Text style={styles.title}>Monthly Packages</Text>
         <Text>Get monthly packages from the restaurants you like</Text>
       </Pressable>
-      <Pressable style={styles.feature}>
+      <Pressable onPress={() => navigation.navigate("Calorie Tracker")} style={styles.feature}>
         <Text style={styles.title}>Calorie Tracker</Text>
         <Text>Track your daily calories consumed in restaurants</Text>
       </Pressable>

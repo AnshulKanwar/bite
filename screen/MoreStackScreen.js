@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import CalorieTrackerScreen from "./CalorieTrackerScreen";
 import MonthlyPackagesScreen from "./MonthlyPackagesScreen";
 import MoreScreen from "./MoreScreen";
 
@@ -9,6 +10,7 @@ const MoreStackScreen = () => {
     <Stack.Navigator>
       <Stack.Screen name="More" component={MoreScreen} />
       <Stack.Screen name="Monthly Packages" component={MonthlyPackagesScreen} />
+      <Stack.Screen name="Calorie Tracker" component={CalorieTrackerScreen} />
     </Stack.Navigator>
   );
 };
