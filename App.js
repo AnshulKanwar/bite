@@ -29,7 +29,11 @@ export default function App() {
           },
         })}
       >
-        <Tab.Screen name="HomeStack" component={HomeStackScreen} />
+        <Tab.Screen
+          name="HomeStack"
+          options={{ title: "Home" }}
+          component={HomeStackScreen}
+        />
         <Tab.Screen name="Orders" component={OrdersScreen} />
         <Tab.Screen name="More" component={MoreScreen} />
       </Tab.Navigator>
