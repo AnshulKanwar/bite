@@ -67,7 +67,7 @@ const RestaurantItem = ({ data }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: "white",
+    backgroundColor: "#fff",
     borderRadius: 30,
     marginVertical: 10,
     marginHorizontal: 15,
