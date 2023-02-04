@@ -1,41 +1,53 @@
-import { Text, View, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Text, View, StyleSheet, Pressable } from "react-native";
+import MutedText from "./MutedText";
 import Offer from "./Offer";
 import Price from "./Price";
 import Rating from "./Rating";
 
 const RestaurantItem = ({ data }) => {
+  const navigation = useNavigation();
+
   const { name, serveTimeMin, serveTimeMax, distance, rating, offers, price } =
     data;
 
   return (
-    <View style={styles.container}>
-      <View styls={styles.left}>
-        <View style={styles.image}></View>
-      </View>
-      <View style={styles.right}>
-        <View>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.time}>
-            {serveTimeMin} - {serveTimeMax} min • {distance} m
-          </Text>
-          <View style={styles.tags}>
-            {offers.length > 0 && (
-              <View style={styles.offers}>
-                {offers.map((offer) => (
-                  <View id={offer}>
-                    <Offer offer={offer} />
-                  </View>
-                ))}
+    <Pressable
+      onPress={() => {
+        navigation.navigate("Restaurant");
+      }}
+    >
+      <View style={styles.container}>
+        <View styls={styles.left}>
+          <View style={styles.image}></View>
+        </View>
+        <View style={styles.right}>
+          <View>
+            <Text style={styles.name}>{name}</Text>
+            <View style={styles.stat}>
+              <MutedText>
+                {serveTimeMin} - {serveTimeMax} min • {distance} m
+              </MutedText>
+            </View>
+            <View style={styles.tags}>
+              {offers.length > 0 && (
+                <View style={styles.offers}>
+                  {offers.map((offer) => (
+                    <View key={offer}>
+                      <Offer offer={offer} />
+                    </View>
+                  ))}
+                </View>
+              )}
+              <View style={styles.rating}>
+                <Rating rating={rating} />
               </View>
-            )}
-            <View style={styles.rating}>
-              <Rating rating={rating} />
             </View>
           </View>
+          <Price price={price} />
         </View>
-        <Price price={price} />
       </View>
-    </View>
+    </Pressable>
   );
 };
 
@@ -43,7 +55,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     backgroundColor: "white",
-    borderRadius: 10,
+    borderRadius: 30,
     marginVertical: 10,
     marginHorizontal: 15,
     padding: 15,
@@ -57,15 +69,14 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     backgroundColor: "#dde0e5",
-    borderRadius: 10,
+    borderRadius: 18,
   },
   name: {
     fontSize: 20,
     fontWeight: "bold",
   },
-  time: {
+  stat: {
     marginTop: 8,
-    color: "#a3a9b7",
   },
   tags: {
     // flexDirection: "row",

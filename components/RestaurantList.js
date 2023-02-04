@@ -1,4 +1,4 @@
-import { FlatList, Text, View, StyleSheet } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import RestaurantItem from "./RestaurantItem";
 
 const restaurants = [

@@ -1,18 +1,9 @@
-import { View, StyleSheet } from "react-native"
-import RestaurantList from "../components/RestaurantList"
+import RestaurantsList from "../components/RestaurantList"
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <RestaurantList />
-    </View>
+    <RestaurantsList />
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 10,
-  },
-});
 
 export default HomeScreen

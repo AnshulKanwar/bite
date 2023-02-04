@@ -6,7 +6,7 @@ const Price = ({ price }) => {
 
 const styles = StyleSheet.create({
   text: {
-    color: "#17b01e"
+    // color: "#17b01e"
   }
 })
 
