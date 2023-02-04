@@ -22,7 +22,7 @@ export default function App() {
             } else if (route.name === "Orders") {
               iconName = "coffee"
             } else if (route.name === "More") {
-              iconName = "more-vertical"
+              iconName = "more-horizontal"
             }
 
             return <Feather name={iconName} size={size} color={color} />;

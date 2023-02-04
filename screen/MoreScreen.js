@@ -1,46 +1,16 @@
-import { FlatList, View, Text, StyleSheet } from "react-native";
-import PackageList from "../components/PackageList";
-
-const bulkPackages = [
-  {
-    id: 1,
-    name: "Food Hut",
-    itemName: "Steam Chicken",
-    dayDuration: "30 Days",
-    originalPrice: 3000,
-    newPrice: 2550,
-    discount: "15% off"
-  },
-  {
-    id: 2,
-    name: "Jaggi",
-    itemName: "Banana Shake",
-    dayDuration: "30 Days",
-    originalPrice: 900,
-    newPrice: 675,
-    discount: "25% off"
-  },
-  {
-    id: 3,
-    name: "Ahaar",
-    itemName: "Amritsari Kulcha",
-    dayDuration: "30 Days",
-    originalPrice: 1600,
-    newPrice: 1350,
-    discount: "10% off"
-  }
-]
+import { StyleSheet, Text, View } from "react-native";
 
 const MoreScreen = () => {
   return (
-    <View>
-      <Text style={styles.heading}>Monthly Packages</Text>
-      <FlatList
-        data={bulkPackages}
-        renderItem={({ item }) => <PackageList data={item} key={item => item.id}/>}
-        keyExtractor={item => item.id}>
-
-      </FlatList>
+    <View style={styles.container}>
+      <View style={styles.feature}>
+        <Text style={styles.title}>Monthly Packages</Text>
+        <Text>Get monthly packages from the restaurants you like</Text>
+      </View>
+      <View style={styles.feature}>
+        <Text style={styles.title}>Calorie Tracker</Text>
+        <Text>Track your daily calories consumed in restaurants</Text>
+      </View>
     </View>
   );
 };
@@ -48,13 +18,22 @@ const MoreScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    marginTop: 100,
     alignItems: "center",
+    marginHorizontal: 30,
   },
-  heading: {
-    margin: 20,
-    fontSize: 20
-  }
-})
+  feature: {
+    backgroundColor: "#fff",
+    padding: 22,
+    borderRadius: 20,
+    marginBottom: 20,
+    width: "100%",
+  },
+  title: {
+    fontSize: 25,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+});
 
 export default MoreScreen;
