@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
-import HomeScreen from "./screen/HomeScreen";
+import HomeStackScreen from "./screen/HomeStackScreen";
 import OrdersScreen from "./screen/OrdersScreen";
 import MoreScreen from "./screen/MoreScreen";
 
@@ -13,11 +13,11 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
-          // headerShown: false,
+          headerShown: false,
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === "Home") {
+            if (route.name === "HomeStack") {
               iconName = "home";
             } else if (route.name === "Orders") {
               iconName = "coffee"
@@ -29,7 +29,7 @@ export default function App() {
           },
         })}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="HomeStack" component={HomeStackScreen} />
         <Tab.Screen name="Orders" component={OrdersScreen} />
         <Tab.Screen name="More" component={MoreScreen} />
       </Tab.Navigator>
