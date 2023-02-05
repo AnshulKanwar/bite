@@ -13,6 +13,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
+      initialRouteName="Login"
         screenOptions={({ route }) => ({
           headerShown: false,
           tabBarIcon: ({ focused, color, size }) => {
