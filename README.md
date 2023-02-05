@@ -5,7 +5,7 @@ A central food payment app that provides students, faculty, and staff hassle-fre
 
 </aside>
 
-With Bite., you can easily **pay for your food** using your **phone**, **track** your spending, and view your **transaction history**. The app also offers **rewards** and **discounts** to **incentivize** users to choose healthy and sustainable food options.
+With **Bite.**, you can easily **pay for your food** using your **phone**, **track** your spending, and view your **transaction history**. The app also offers **rewards** and **discounts** to **incentivize** users to choose healthy and sustainable food options.
 
 <p align="center">
   <img src="assets/screenshots/home.png" width=300/>
@@ -29,7 +29,7 @@ With Bite., you can easily **pay for your food** using your **phone**, **track**
 
 These features can make the dining experience more convenient, informative, and enjoyable for users while also helping to improve the overall quality of the university's dining services.
 
-# Screenshot
+# Screenshots
 <img src="assets/screenshots/restaurant.png" width=300/> |
 <img src="assets/screenshots/cart.png" width=300/> |
 <img src="assets/screenshots/more.png" width=300/>
@@ -37,9 +37,3 @@ These features can make the dining experience more convenient, informative, and 
 <img src="assets/screenshots/calorie-tracker.png" width=300/> |
 <img src="assets/screenshots/order-history.png" width=300/>
 
-# Next Step
-Deadline: 15:00
-
-- [x]  Create Presentation (Mayank, Gautam)
-- [x]  Figma Prototype (Anshul, Ojas)
-- [x]  Splash Screen
