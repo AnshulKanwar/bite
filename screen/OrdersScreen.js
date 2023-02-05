@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Switch } from "react-native";
+import { View, Text, StyleSheet, Switch, Pressable } from "react-native";
 import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 
@@ -65,16 +65,26 @@ const OrdersScreen = ({ route }) => {
             </View>
             <View style={styles.row}>
               <Text style={styles.txt}>GST (18%)</Text>
-              <Text style={styles.txt}>₹{Math.ceil(0.18 * (totalSum()))}</Text>
+              <Text style={styles.txt}>₹{Math.ceil(0.18 * totalSum())}</Text>
             </View>
             <View style={styles.row}>
               <Text style={styles.boldtxt}>Grand Total</Text>
               <Text style={styles.boldtxt}>
-                ₹{totalSum() + Math.ceil(0.18 * (totalSum()))}
+                ₹{totalSum() + Math.ceil(0.18 * totalSum())}
               </Text>
             </View>
           </View>
         </View>
+      </View>
+      <View style={styles.buttonWrapper}>
+        <Pressable
+          style={({ pressed }) =>
+            pressed ? [styles.payButton, styles.pressed] : styles.payButton
+          }
+        >
+          <Text style={styles.buttontext}>Pay</Text>
+          <Feather name="arrow-right" size={24} color="white" />
+        </Pressable>
       </View>
     </View>
   );
@@ -105,8 +115,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingHorizontal: 20,
     paddingTop: 5,
     fontSize: 16,
   },
@@ -122,6 +131,25 @@ const styles = StyleSheet.create({
   boldtxt: {
     fontSize: 17,
     fontWeight: "bold",
+  },
+  buttonWrapper: {
+    marginHorizontal: 20,
+  },
+  payButton: {
+    marginTop: 20,
+    width: "100%",
+    borderRadius: 10,
+    backgroundColor: "#ec4747",
+    padding: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  buttontext: {
+    color: "#fff",
+    fontSize: 20,
+  },
+  pressed: {
+    opacity: 0.7,
   },
 });
 
