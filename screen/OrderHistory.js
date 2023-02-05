@@ -41,7 +41,7 @@ const OrdersScreen = () => {
   return (
     // <View style={styles.container}>
     <View>
-      <Text style={styles.heading}>Order History</Text>
+      {/* <Text style={styles.heading}>Order History</Text> */}
       <View style={styles.container}>
         <View style={styles.mainOrder}>
           <Text style={styles.resName}>Jaggi</Text>
