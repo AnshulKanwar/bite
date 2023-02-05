@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import MenuItem from "./MenuItem";
+import { useNavigation } from "@react-navigation/native";
 
 const menu = [
   {
@@ -89,6 +90,8 @@ const menu = [
 const Menu = () => {
   const [isOrder, setIsOrder] = useState(false);
 
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Menu</Text>
@@ -102,14 +105,19 @@ const Menu = () => {
         )}
         keyExtractor={(item) => item.id}
       />
-      {isOrder &&
-      <View style={{ width: '100%', alignItems: "center" }}>
-        <View style={styles.placeOrder}>
-          <Text style={styles.text}>Place order</Text>
-          <Feather name="coffee" size={24} color="white" />
+      {isOrder && (
+        <View style={{ width: "100%", alignItems: "center" }}>
+          <Pressable
+            style={styles.placeOrderButton}
+            onPress={() => navigation.navigate("Cart")}
+          >
+            <View style={styles.content}>
+              <Text style={styles.text}>Place order</Text>
+              <Feather name="coffee" size={24} color="white" />
+            </View>
+          </Pressable>
         </View>
-      </View>
-      }
+      )}
     </View>
   );
 };
@@ -123,12 +131,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 15,
   },
-  placeOrder: {
+  placeOrderButton: {
     position: "absolute",
     bottom: 50,
     backgroundColor: "#ec4747",
     padding: 10,
     borderRadius: 20,
+  },
+  content: {
     flexDirection: "row",
     alignItems: "center",
   },
