@@ -4,8 +4,8 @@ import MutedText from "./MutedText";
 import Rating from "./Rating";
 import Stepper from "./Stepper";
 
-const MenuItem = ({ menu, toggleOrder }) => {
-  const { name, timeToPrepareMin, timeToPrepareMax, rating, price } = menu;
+const MenuItem = ({ menu, toggleOrder, handleItem }) => {
+  const { id, name, timeToPrepareMin, timeToPrepareMax, rating, price } = menu;
 
   const [number, setNumber] = useState(0);
 
@@ -13,6 +13,7 @@ const MenuItem = ({ menu, toggleOrder }) => {
     if (number + n >= 0) {
       toggleOrder()
       setNumber((prev) => prev + n);
+      handleItem(id, n)
     }
   };
 

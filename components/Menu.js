@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import MenuItem from "./MenuItem";
 import { useNavigation } from "@react-navigation/native";
+import MenuItem from "./MenuItem";
 
 const menu = [
   {
@@ -89,8 +89,29 @@ const menu = [
 
 const Menu = () => {
   const [isOrder, setIsOrder] = useState(false);
+  const [orders, setOrders] = useState([]);
 
   const navigation = useNavigation();
+
+  const handleItem = (id, quantity) => {
+    const prevItem = orders.filter((item) => item.id === id);
+    if (!prevItem.length) {
+      const item = menu.filter((item) => item.id === id)[0];
+
+      const newOrder = {
+        id,
+        name: item.name,
+        quantity,
+        price: item.price * quantity,
+      };
+
+      console.log(newOrder)
+
+      setOrders((prev) => [newOrder, ...prev]);
+    } else {
+      // TODO
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -101,6 +122,7 @@ const Menu = () => {
           <MenuItem
             menu={item}
             toggleOrder={() => setIsOrder((prev) => !prev)}
+            handleItem={handleItem}
           />
         )}
         keyExtractor={(item) => item.id}
@@ -109,7 +131,9 @@ const Menu = () => {
         <View style={{ width: "100%", alignItems: "center" }}>
           <Pressable
             style={styles.placeOrderButton}
-            onPress={() => navigation.navigate("Cart")}
+            onPress={() => { 
+              console.log(orders)
+              return navigation.navigate("Cart", orders)}}
           >
             <View style={styles.content}>
               <Text style={styles.text}>Place order</Text>
