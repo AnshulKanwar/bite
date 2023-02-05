@@ -1,7 +1,7 @@
 import { StyleSheet, Text, SafeAreaView, StatusBar } from "react-native";
 import RestaurantsList from "../components/RestaurantList";
 
-const HomeScreen = () => {
+const HomeScreen = ({ route }) => {
   return (
     <SafeAreaView style={styles.AndroidSafeArea}>
       <Text style={styles.logo}>Bite.</Text>
