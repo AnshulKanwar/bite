@@ -5,7 +5,7 @@ import Rating from "./Rating";
 import Stepper from "./Stepper";
 
 const MenuItem = ({ menu, handleItem }) => {
-  const { id, name, timeToPrepareMin, timeToPrepareMax, rating, price } = menu;
+  const { tags ,id, name, timeToPrepareMin, timeToPrepareMax, rating, price } = menu;
 
   const [number, setNumber] = useState(0);
 
@@ -20,6 +20,7 @@ const MenuItem = ({ menu, handleItem }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.name}>{name}</Text>
+        <Text style={styles.tags}>{tags}</Text>
         <Text>₹{price}</Text>
       </View>
       <View style={styles.footer}>
@@ -57,6 +58,17 @@ const styles = StyleSheet.create({
   name: {
     fontWeight: "500",
   },
+  tags:{
+  
+    fontStyle:"italic",
+    color:"grey" ,
+    alignSelf:"flex-start",
+    marginRight:"auto",
+    marginLeft:10,
+
+  },
+
+
   stat: {
     flexDirection: "row",
     marginTop: 6,
