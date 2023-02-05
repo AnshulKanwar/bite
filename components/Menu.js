@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
   },
   placeOrderButton: {
     position: "absolute",
-    bottom: 50,
+    bottom: 100,
     backgroundColor: "#ec4747",
     padding: 10,
     borderRadius: 20,

@@ -24,8 +24,9 @@ export default function App() {
               iconName = "shopping-cart";
             } else if (route.name === "MoreStack") {
               iconName = "more-horizontal";
+            } else if(route.name === "Login") {
+              iconName = "user";
             }
-
             return <Feather name={iconName} size={size} color={color} />;
           },
         })}
