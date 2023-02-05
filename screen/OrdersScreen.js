@@ -39,7 +39,7 @@ const OrdersScreen = ({ route }) => {
         <View style={styles.container}>
           <View style={styles.mainOrder}>
             <Text style={styles.resName}>
-              Important <Feather name="alert-triangle" size={20} />{" "}
+              Important <Feather name="alert-circle" size={20} color="brown" />{" "}
             </Text>
             <Text style={styles.row}>
               Your table will be reserved for 30 minutes after 15 minutes of
