@@ -1,16 +1,21 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 import MutedText from "./MutedText";
 import Pill from "./Pill";
 
 const MonthlyPackage = ({ mpackage }) => {
-  const { restaurant, dish, duration, price, discountedPrice, percentage } =
+  const { restaurant, dish, duration, price, discountedPrice, percentage, image } =
     mpackage;
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{restaurant}</Text>
       <View style={styles.content}>
-        <View style={styles.image}></View>
+        <Image 
+          style={styles.image}
+          source={{
+            uri: image,
+          }}
+        />
         <View style={styles.right}>
           <View>
             <Text style={styles.dish}>{dish}</Text>

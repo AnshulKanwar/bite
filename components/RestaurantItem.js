@@ -26,7 +26,7 @@ const RestaurantItem = ({ data }) => {
       }}
     >
       <View style={styles.container}>
-        <View styls={styles.left}>
+        <View style={styles.left}>
           <Image
             style={styles.image}
             source={{
