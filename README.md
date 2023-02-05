@@ -7,7 +7,10 @@ A central food payment app that provides students, faculty, and staff hassle-fre
 
 With Bite., you can easily **pay for your food** using your **phone**, **track** your spending, and view your **transaction history**. The app also offers **rewards** and **discounts** to **incentivize** users to choose healthy and sustainable food options.
 
-<img src="assets/screenshots/home.png" width=300/>
+<p align="center">
+  <img src="assets/screenshots/home.png" width=300/>
+</p>
+
 
 # Features
 
