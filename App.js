@@ -24,7 +24,7 @@ export default function App() {
               iconName = "shopping-cart";
             } else if (route.name === "MoreStack") {
               iconName = "more-horizontal";
-            } else if(route.name === "Login") {
+            } else if(route.name === "Profile") {
               iconName = "user";
             }
             return <Feather name={iconName} size={size} color={color} />;
@@ -43,8 +43,8 @@ export default function App() {
           component={MoreStackScreen}
         />
         <Tab.Screen
-          name="Login"
-          options={{ title: "Login" }}
+          name="Profile"
+          options={{ title: "Profile" }}
           component={LoginScreen}
         />
       </Tab.Navigator>
