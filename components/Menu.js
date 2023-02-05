@@ -104,7 +104,6 @@ const Menu = () => {
   const [msort, setMsort] = useState(0);
   const [mitems, setMitems] = useState(menu)
   useEffect(() => {
-    console.log("hello")
     if(msort===1)
     {
       const newList = menu.filter((item) => (item.tags==="Veg"))
