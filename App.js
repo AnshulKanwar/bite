@@ -5,6 +5,7 @@ import { Feather } from "@expo/vector-icons";
 import HomeStackScreen from "./screen/HomeStackScreen";
 import OrdersScreen from "./screen/OrdersScreen";
 import MoreStackScreen from "./screen/MoreStackScreen";
+import LoginScreen from "./screen/LoginScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,6 +40,11 @@ export default function App() {
           name="MoreStack"
           options={{ title: "More" }}
           component={MoreStackScreen}
+        />
+        <Tab.Screen
+          name="Login"
+          options={{ title: "Login" }}
+          component={LoginScreen}
         />
       </Tab.Navigator>
     </NavigationContainer>
