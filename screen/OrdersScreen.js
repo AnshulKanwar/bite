@@ -70,7 +70,8 @@ const OrdersScreen = ({ route }) => {
             <View style={styles.row}>
               <Text style={styles.boldtxt}>Grand Total</Text>
               <Text style={styles.boldtxt}>
-                ₹{totalSum() + Math.ceil(0.18 * totalSum())}
+                ₹
+                {totalSum() + Math.ceil(0.18 * totalSum()) + (isChecked ? 30 : 0)}
               </Text>
             </View>
           </View>
