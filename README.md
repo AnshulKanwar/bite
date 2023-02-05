@@ -33,7 +33,9 @@ These features can make the dining experience more convenient, informative, and 
 <img src="assets/screenshots/restaurant.png" width=300/> |
 <img src="assets/screenshots/cart.png" width=300/> |
 <img src="assets/screenshots/more.png" width=300/>
-<img src="assets/screenshots/calorie-tracker.png" width=300/>
+<img src="assets/screenshots/monthly-packages.png" width=300/> |
+<img src="assets/screenshots/calorie-tracker.png" width=300/> |
+<img src="assets/screenshots/order-history.png" width=300/>
 
 # Next Step
 Deadline: 15:00
