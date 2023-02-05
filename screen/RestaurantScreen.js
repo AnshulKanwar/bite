@@ -3,7 +3,6 @@ import { Feather } from "@expo/vector-icons";
 import Menu from "../components/Menu";
 import { useNavigation } from "@react-navigation/native";
 
-// const name = "WrapChick";
 const RestaurantScreen = ({ route }) => {
   const { name, image } = route.params
   const navigation = useNavigation();
@@ -29,7 +28,6 @@ const RestaurantScreen = ({ route }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#f0f1fe",
   },
   backButton: {
     flexDirection: "row",
