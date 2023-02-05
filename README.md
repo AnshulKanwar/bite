@@ -26,8 +26,13 @@ With Bite., you can easily **pay for your food** using your **phone**, **track**
 
 These features can make the dining experience more convenient, informative, and enjoyable for users while also helping to improve the overall quality of the university's dining services.
 
-# Next Step
+# Screenshot
+<img src="assets/screenshots/restaurant.png" width=300/> |
+<img src="assets/screenshots/cart.png" width=300/> |
+<img src="assets/screenshots/more.png" width=300/>
+<img src="assets/screenshots/calorie-tracker.png" width=300/>
 
+# Next Step
 Deadline: 15:00
 
 - [x]  Create Presentation (Mayank, Gautam)
