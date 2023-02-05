@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -89,7 +89,7 @@ const menu = [
     price: 30,
   },
   {
-    tags:"",
+    tags:"Non-Veg",
     id: 10,
     name: "Butter Chicken",
     timeToPrepareMin: "5",
@@ -101,7 +101,27 @@ const menu = [
 
 const Menu = () => {
   const [orders, setOrders] = useState([]);
-
+  const [msort, setMsort] = useState(0);
+  const [mitems, setMitems] = useState(menu)
+  useEffect(() => {
+    console.log("hello")
+    if(msort===1)
+    {
+      const newList = menu.filter((item) => (item.tags==="Veg"))
+      setMitems(newList)
+    }
+    else if(msort===2)
+    {
+      const newList = menu.filter((item) => (item.tags==="Non-Veg"))
+      setMitems(newList)
+    }
+    else if(msort===3)
+    {
+      const newList = menu.filter((item) => (item.tags==="Gluten-Free"))
+      setMitems(newList)
+    }
+  }, [msort])
+  const callback = payload => {setMsort(payload)}
   const navigation = useNavigation();
 
   const handleItem = (id, quantity) => {
@@ -142,6 +162,8 @@ const Menu = () => {
       <Text style={styles.title}>Menu</Text>
       <View style={{ flexDirection: "row", marginBottom: 15 }}>
         <Pill
+          callback={callback}
+          tag={1}
           style={{ marginRight: 5, flexDirection: "row", alignItems: "center" }}
           bg="white"
         >
@@ -149,6 +171,8 @@ const Menu = () => {
           <Text style={{ marginLeft: 5 }}>Veg</Text>
         </Pill>
         <Pill
+          callback={callback}
+          tag={2}
           style={{ marginRight: 5, flexDirection: "row", alignItems: "center" }}
           bg="white"
         >
@@ -161,6 +185,8 @@ const Menu = () => {
           <Text style={{ marginLeft: 5 }}>Non-veg</Text>
         </Pill>
         <Pill
+          callback={callback}
+          tag={3}
           style={{ marginRight: 5, flexDirection: "row", alignItems: "center" }}
           bg="white"
         >
@@ -173,15 +199,15 @@ const Menu = () => {
         </Pill>
       </View>
       <FlatList
-        data={menu}
+        data={mitems}
         style={{ marginBottom: 60 }}
-        renderItem={({ item }) => (
-          <MenuItem
-            menu={item}
-            toggleOrder={() => setIsOrder((prev) => !prev)}
-            handleItem={handleItem}
-          />
-        )}
+        renderItem={({ item }) => {
+            return <MenuItem
+              menu={item}
+              toggleOrder={() => setOrders((prev) => !prev)}
+              handleItem={handleItem}
+            />
+        }}
         keyExtractor={(item) => item.id}
       />
       {orders.length > 0 && (

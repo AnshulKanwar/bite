@@ -1,8 +1,18 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Pressable } from "react-native";
 
-const Pill = ({ bg, children, style }) => {
+const Pill = ({ bg, children, style, callback, tag }) => {
+  const handleCallback = () => {
+    if(tag===1)
+      callback(1)
+    else if(tag===2)
+      callback(2)
+    else if(tag===3)
+      callback(3)
+  }
   return (
-    <View style={[styles.container, style, { backgroundColor: bg }]}>{children}</View>
+    <Pressable onPress={handleCallback}>
+      <View style={[styles.container, style, { backgroundColor: bg }]}>{children}</View>
+    </Pressable>
   );
 };
 
