@@ -174,6 +174,7 @@ const Menu = () => {
       </View>
       <FlatList
         data={menu}
+        style={{ marginBottom: 60 }}
         renderItem={({ item }) => (
           <MenuItem
             menu={item}
@@ -192,8 +193,8 @@ const Menu = () => {
             }}
           >
             <View style={styles.content}>
-              <Text style={styles.text}>Place order</Text>
-              <Feather name="coffee" size={24} color="white" />
+              <Text style={styles.text}>View Cart</Text>
+              <Feather name="shopping-cart" size={20} color="white" />
             </View>
           </Pressable>
         </View>
@@ -213,10 +214,14 @@ const styles = StyleSheet.create({
   },
   placeOrderButton: {
     position: "absolute",
-    bottom: 100,
+    bottom: 80,
     backgroundColor: "#ec4747",
     padding: 10,
     borderRadius: 20,
+    shadowColor: "black",
+    shadowRadius: 10,
+    shadowOffset: { height: 4 },
+    shadowOpacity: 0.5,
   },
   content: {
     flexDirection: "row",
@@ -224,8 +229,11 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#fff",
-    marginRight: 10,
+    marginRight: 8,
   },
+  flist: {
+    marginBottom: 20
+  }
 });
 
 export default Menu;
