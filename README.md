@@ -5,7 +5,7 @@ A central food payment app that provides students, faculty, and staff hassle-fre
 
 </aside>
 
-With Bite., you can easily **pay for your food** using your **phone**, **track** your spending, and view your **transaction history**. The app also offers **rewards** and **discounts** to **incentivize** users to choose healthy and sustainable food options.
+With **Bite.**, you can easily **pay for your food** using your **phone**, **track** your spending, and view your **transaction history**. The app also offers **rewards** and **discounts** to **incentivize** users to choose healthy and sustainable food options.
 
 <p align="center">
   <img src="assets/screenshots/home.png" width=300/>
@@ -18,7 +18,7 @@ With Bite., you can easily **pay for your food** using your **phone**, **track**
 2. **Order Ahead**: A feature that allows users to place an order in advance and skip the line when they arrive at the dining facility.
 3. **Menu Information**: A feature that provides users with the daily menu, including information on ingredients and allergens.
 4. **Special Diet Options**: A feature that helps users with special dietary needs, such as vegetarian, vegan, gluten-free, and others, to easily find meals that meet their requirements.
-5. s: A feature that promotes sustainability by offering incentives for users who choose eco-friendly options, such as reusable containers, or who reduce food waste by taking only what they can eat.
+5. **Green Initiatives**: A feature that promotes sustainability by offering incentives for users who choose eco-friendly options, such as reusable containers, or who reduce food waste by taking only what they can eat.
 6. **Nutrition Information**: A feature that provides users with nutritional information for each meal, including calorie counts and macronutrient ratios.
 7. **Dining Hall Locations**: A feature that provides users with the location and hours of operation for each dining hall, restaurant, and cafe on campus.
 8. **Push Notifications**: A feature that provides users with real-time updates, such as menu changes, special promotions, and other relevant information.
@@ -29,15 +29,11 @@ With Bite., you can easily **pay for your food** using your **phone**, **track**
 
 These features can make the dining experience more convenient, informative, and enjoyable for users while also helping to improve the overall quality of the university's dining services.
 
-# Screenshot
+# Screenshots
 <img src="assets/screenshots/restaurant.png" width=300/> |
 <img src="assets/screenshots/cart.png" width=300/> |
 <img src="assets/screenshots/more.png" width=300/>
-<img src="assets/screenshots/calorie-tracker.png" width=300/>
+<img src="assets/screenshots/monthly-packages.png" width=300/> |
+<img src="assets/screenshots/calorie-tracker.png" width=300/> |
+<img src="assets/screenshots/order-history.png" width=300/>
 
-# Next Step
-Deadline: 15:00
-
-- [x]  Create Presentation (Mayank, Gautam)
-- [x]  Figma Prototype (Anshul, Ojas)
-- [x]  Splash Screen

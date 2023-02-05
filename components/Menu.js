@@ -8,6 +8,7 @@ import Pill from "./Pill";
 
 const menu = [
   {
+    tags:"Veg",
     id: 1,
     name: "Mexican Salsa Wrap",
     timeToPrepareMin: "5",
@@ -16,6 +17,7 @@ const menu = [
     price: 75,
   },
   {
+    tags:"Veg",
     id: 2,
     name: "Veg Chilli Wrap",
     timeToPrepareMin: "5",
@@ -24,6 +26,7 @@ const menu = [
     price: 70,
   },
   {
+    tags:"Gluten-Free",
     id: 3,
     name: "Hot Coffee",
     timeToPrepareMin: "2",
@@ -32,6 +35,7 @@ const menu = [
     price: 15,
   },
   {
+    tags:"Gluten-Free",
     id: 4,
     name: "Tea",
     timeToPrepareMin: "1",
@@ -40,6 +44,7 @@ const menu = [
     price: 10,
   },
   {
+    tags:"Veg",
     id: 5,
     name: "Veg Cheese Burger",
     timeToPrepareMin: "5",
@@ -48,6 +53,7 @@ const menu = [
     price: 45,
   },
   {
+    tags:"Veg",
     id: 6,
     name: "Tandoori Paneer Wrap",
     timeToPrepareMin: "5",
@@ -56,6 +62,7 @@ const menu = [
     price: 75,
   },
   {
+    tags:"",
     id: 7,
     name: "Veg Makhani Wrap",
     timeToPrepareMin: "5",
@@ -64,6 +71,7 @@ const menu = [
     price: 70,
   },
   {
+    tags:"",
     id: 8,
     name: "Cold Coffee",
     timeToPrepareMin: "2",
@@ -72,6 +80,7 @@ const menu = [
     price: 30,
   },
   {
+    tags:"",
     id: 9,
     name: "Hot Chocolate",
     timeToPrepareMin: "1",
@@ -80,6 +89,7 @@ const menu = [
     price: 30,
   },
   {
+    tags:"",
     id: 10,
     name: "Butter Chicken",
     timeToPrepareMin: "5",
