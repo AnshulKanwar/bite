@@ -4,17 +4,12 @@ import MutedText from "./MutedText";
 import Rating from "./Rating";
 import Stepper from "./Stepper";
 
-const MenuItem = ({ menu, toggleOrder, handleItem }) => {
+const MenuItem = ({ menu, handleItem }) => {
   const { id, name, timeToPrepareMin, timeToPrepareMax, rating, price } = menu;
 
   const [number, setNumber] = useState(0);
 
   const increment = (n) => {
-    if (number === 0 && number + n >= 0) {
-      toggleOrder();
-    } else if (number >= 0 && number + n <= 0) {
-      toggleOrder();
-    }
     if (number + n >= 0) {
       handleItem(id, number + n);
       setNumber((prev) => prev + n);

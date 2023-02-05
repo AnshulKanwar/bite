@@ -26,7 +26,7 @@ const CalorieTrackerScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.analysis}>
-        Great job! Chad. You had overall healthy meals today.
+        Great job! Kunal. You had overall healthy meals today.
       </Text>
       <View style={styles.card}>
         <Text style={styles.calories}>710 Cal</Text>

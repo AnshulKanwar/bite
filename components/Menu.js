@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import MenuItem from "./MenuItem";
 import Pill from "./Pill";
@@ -90,7 +90,6 @@ const menu = [
 ];
 
 const Menu = () => {
-  const [isOrder, setIsOrder] = useState(false);
   const [orders, setOrders] = useState([]);
 
   const navigation = useNavigation();
@@ -98,6 +97,7 @@ const Menu = () => {
   const handleItem = (id, quantity) => {
     const item = menu.filter((item) => item.id === id)[0];
     const prevOrder = orders.filter((item) => item.id === id);
+
     if (!prevOrder.length) {
       const item = menu.filter((item) => item.id === id)[0];
 
@@ -110,15 +110,20 @@ const Menu = () => {
 
       setOrders((prev) => [newOrder, ...prev]);
     } else {
-      let newOrders = orders.map((order) => {
-        if (order.id === id) {
-          let newOrder = { ...order, quantity, price: item.price * quantity };
-          return newOrder;
-        } else {
-          return order;
-        }
-      });
-      setOrders(newOrders);
+      if (quantity === 0) {
+        let newOrders = orders.filter(order => order.id !== id)
+        setOrders(newOrders)
+      } else {
+        let newOrders = orders.map((order) => {
+          if (order.id === id) {
+            let newOrder = { ...order, quantity, price: item.price * quantity };
+            return newOrder;
+          } else {
+            return order;
+          }
+        });
+        setOrders(newOrders);
+      }
     }
   };
 
@@ -149,7 +154,11 @@ const Menu = () => {
           style={{ marginRight: 5, flexDirection: "row", alignItems: "center" }}
           bg="white"
         >
-          <MaterialCommunityIcons name="bread-slice-outline" size={22} color="#f4af47" />
+          <MaterialCommunityIcons
+            name="bread-slice-outline"
+            size={22}
+            color="#f4af47"
+          />
           <Text style={{ marginLeft: 5 }}>Gluten-free</Text>
         </Pill>
       </View>
@@ -164,7 +173,7 @@ const Menu = () => {
         )}
         keyExtractor={(item) => item.id}
       />
-      {isOrder && (
+      {orders.length > 0 && (
         <View style={{ width: "100%", alignItems: "center" }}>
           <Pressable
             style={styles.placeOrderButton}
