@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 import MenuItem from "./MenuItem";
+import Pill from "./Pill";
 
 const menu = [
   {
@@ -123,6 +125,34 @@ const Menu = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Menu</Text>
+      <View style={{ flexDirection: "row", marginBottom: 15 }}>
+        <Pill
+          style={{ marginRight: 5, flexDirection: "row", alignItems: "center" }}
+          bg="white"
+        >
+          <Feather name="stop-circle" size={20} color="green" />
+          <Text style={{ marginLeft: 5 }}>Veg</Text>
+        </Pill>
+        <Pill
+          style={{ marginRight: 5, flexDirection: "row", alignItems: "center" }}
+          bg="white"
+        >
+          <Feather
+            style={{ transform: [{ rotateZ: "270deg" }] }}
+            name="play-circle"
+            size={20}
+            color="brown"
+          />
+          <Text style={{ marginLeft: 5 }}>Non-veg</Text>
+        </Pill>
+        <Pill
+          style={{ marginRight: 5, flexDirection: "row", alignItems: "center" }}
+          bg="white"
+        >
+          <MaterialCommunityIcons name="bread-slice-outline" size={22} color="#f4af47" />
+          <Text style={{ marginLeft: 5 }}>Gluten-free</Text>
+        </Pill>
+      </View>
       <FlatList
         data={menu}
         renderItem={({ item }) => (
