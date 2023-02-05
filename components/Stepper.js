@@ -1,16 +1,7 @@
-import { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
-const Stepper = () => {
-  const [number, setNumber] = useState(0);
-
-  const increment = (n) => {
-    if (number + n >= 0) {
-      setNumber((prev) => prev + n);
-    }
-  };
-
+const Stepper = ({ number, increment }) => {
   return (
     <View style={styles.container}>
       {number === 0 ? (

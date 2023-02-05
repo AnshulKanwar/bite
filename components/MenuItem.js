@@ -1,10 +1,20 @@
+import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import MutedText from "./MutedText";
 import Rating from "./Rating";
 import Stepper from "./Stepper";
 
-const MenuItem = ({ menu }) => {
+const MenuItem = ({ menu, toggleOrder }) => {
   const { name, timeToPrepareMin, timeToPrepareMax, rating, price } = menu;
+
+  const [number, setNumber] = useState(0);
+
+  const increment = (n) => {
+    if (number + n >= 0) {
+      toggleOrder()
+      setNumber((prev) => prev + n);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -19,7 +29,9 @@ const MenuItem = ({ menu }) => {
           </MutedText>
           <Rating rating={rating} />
         </View>
-        <Stepper />
+        <Stepper number={number} increment={increment} />
+      </View>
+      <View>
       </View>
     </View>
   );

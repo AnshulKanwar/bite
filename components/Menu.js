@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
+import { Feather } from "@expo/vector-icons";
 import MenuItem from "./MenuItem";
 
 const menu = [
@@ -85,14 +87,29 @@ const menu = [
 ];
 
 const Menu = () => {
+  const [isOrder, setIsOrder] = useState(false);
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Menu</Text>
       <FlatList
         data={menu}
-        renderItem={({ item }) => <MenuItem menu={item} />}
+        renderItem={({ item }) => (
+          <MenuItem
+            menu={item}
+            toggleOrder={() => setIsOrder((prev) => !prev)}
+          />
+        )}
         keyExtractor={(item) => item.id}
       />
+      {isOrder &&
+      <View style={{ width: '100%', alignItems: "center" }}>
+        <View style={styles.placeOrder}>
+          <Text style={styles.text}>Place order</Text>
+          <Feather name="coffee" size={24} color="white" />
+        </View>
+      </View>
+      }
     </View>
   );
 };
@@ -105,6 +122,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 15,
+  },
+  placeOrder: {
+    position: "absolute",
+    bottom: 50,
+    backgroundColor: "#ec4747",
+    padding: 10,
+    borderRadius: 20,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  text: {
+    color: "#fff",
+    marginRight: 10,
   },
 });
 
