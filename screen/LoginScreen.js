@@ -16,7 +16,6 @@ const LoginScreen = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
-        console.log(user.email)
         sethuman(user.email)
         navigation.navigate("HomeStack", {user: user.email})
       }
@@ -29,7 +28,6 @@ const LoginScreen = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCredentials => {
         const user = userCredentials.user;
-        console.log('Registered with:', user.email);
         alert('Registered Successfully!')
         sethuman(user.email)
       })
@@ -40,7 +38,6 @@ const LoginScreen = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredentials => {
         const user = userCredentials.user;
-        console.log('Logged in with:', user.email);
         alert("Logged in")
         sethuman(user.email)
         navigation.navigate("HomeStack", {user: user.email})
