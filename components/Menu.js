@@ -183,8 +183,8 @@ const Menu = () => {
             }}
           >
             <View style={styles.content}>
-              <Text style={styles.text}>Place order</Text>
-              <Feather name="coffee" size={24} color="white" />
+              <Text style={styles.text}>View Cart</Text>
+              <Feather name="shopping-cart" size={20} color="white" />
             </View>
           </Pressable>
         </View>
@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#fff",
-    marginRight: 10,
+    marginRight: 8,
   },
   flist: {
     marginBottom: 20
