@@ -12,8 +12,8 @@ const MenuItem = ({ menu, toggleOrder, handleItem }) => {
   const increment = (n) => {
     if (number + n >= 0) {
       toggleOrder()
+      handleItem(id, number + n)
       setNumber((prev) => prev + n);
-      handleItem(id, n)
     }
   };
 

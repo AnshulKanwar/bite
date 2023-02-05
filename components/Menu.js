@@ -94,8 +94,9 @@ const Menu = () => {
   const navigation = useNavigation();
 
   const handleItem = (id, quantity) => {
-    const prevItem = orders.filter((item) => item.id === id);
-    if (!prevItem.length) {
+    const item = menu.filter((item) => item.id === id)[0];
+    const prevOrder = orders.filter((item) => item.id === id);
+    if (!prevOrder.length) {
       const item = menu.filter((item) => item.id === id)[0];
 
       const newOrder = {
@@ -105,11 +106,17 @@ const Menu = () => {
         price: item.price * quantity,
       };
 
-      console.log(newOrder)
-
       setOrders((prev) => [newOrder, ...prev]);
     } else {
-      // TODO
+      let newOrders = orders.map((order) => {
+        if (order.id === id) {
+          let newOrder = { ...order, quantity, price: item.price * quantity };
+          return newOrder;
+        } else {
+          return order;
+        }
+      });
+      setOrders(newOrders);
     }
   };
 
@@ -131,9 +138,9 @@ const Menu = () => {
         <View style={{ width: "100%", alignItems: "center" }}>
           <Pressable
             style={styles.placeOrderButton}
-            onPress={() => { 
-              console.log(orders)
-              return navigation.navigate("Cart", orders)}}
+            onPress={() => {
+              return navigation.navigate("Cart", orders);
+            }}
           >
             <View style={styles.content}>
               <Text style={styles.text}>Place order</Text>

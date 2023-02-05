@@ -13,64 +13,28 @@ const OrdersScreen = ({ route }) => {
     );
   }
 
-  let sum = 0;
+  const totalSum = () => order.reduce((acc, curr) => acc + curr.price, 0);
+
   const [isChecked, setIsChecked] = useState(false);
-  const [total, settotal] = useState(0);
+
   const toggleIsChecked = () => {
-    if (isChecked) settotal(total - 30);
-    else settotal(total + 30);
     setIsChecked((value) => !value);
   };
 
-  const cart = [
-    {
-      name: "Cheese French Fries",
-      quantity: 2,
-      amount: 120,
-    },
-    {
-      name: "Hot Coffee",
-      quantity: 2,
-      amount: 100,
-    },
-    {
-      name: "Spring Roll",
-      quantity: 2,
-      amount: 90,
-    },
-    {
-      name: "Masala Tea",
-      quantity: 1,
-      amount: 12,
-    },
-  ];
-
   return (
-    // <View style={styles.container}>
     <View>
       <Text style={styles.heading}>Your Cart</Text>
       <View style={styles.container}>
         <View style={styles.mainOrder}>
           <Text style={styles.resName}>Jaggi</Text>
-          {
-            // cart.map((element, index) => {
-            //   sum += element.amount;
-            //   return (
-            //     <View style={styles.row} key={index}>
-            //       <Text style={styles.txt}>{element.quantity} x {element.name}</Text>
-            //       <Text style={styles.txt}>₹{element.amount}</Text>
-            //     </View>
-            //   )
-            // })
-            order.map((item) => (
-              <View style={styles.row} key={item.id}>
-                <Text style={styles.txt}>
-                  {item.quantity} x {item.name}
-                </Text>
-                <Text style={styles.txt}>₹{item.price}</Text>
-              </View>
-            ))
-          }
+          {order.map((item) => (
+            <View style={styles.row} key={item.id}>
+              <Text style={styles.txt}>
+                {item.quantity} x {item.name}
+              </Text>
+              <Text style={styles.txt}>₹{item.price}</Text>
+            </View>
+          ))}
         </View>
         <View style={styles.container}>
           <View style={styles.mainOrder}>
@@ -81,7 +45,7 @@ const OrdersScreen = ({ route }) => {
               Your table will be reserved for 30 minutes after 15 minutes of
               placing your order
             </Text>
-            <View style={styles.row}>
+            <View style={[styles.row, { marginTop: 20 }]}>
               <Text style={styles.txt}>Reserve table</Text>
               <Text style={styles.txt}>
                 {" "}
@@ -97,16 +61,16 @@ const OrdersScreen = ({ route }) => {
           <View style={styles.mainOrder}>
             <View style={styles.row}>
               <Text style={styles.boldtxt}>Subtotal</Text>
-              <Text style={styles.boldtxt}>₹{total + sum}</Text>
+              <Text style={styles.boldtxt}>₹{totalSum()}</Text>
             </View>
             <View style={styles.row}>
               <Text style={styles.txt}>GST (18%)</Text>
-              <Text style={styles.txt}>₹{Math.ceil(0.18 * (total + sum))}</Text>
+              <Text style={styles.txt}>₹{Math.ceil(0.18 * (totalSum()))}</Text>
             </View>
             <View style={styles.row}>
               <Text style={styles.boldtxt}>Grand Total</Text>
               <Text style={styles.boldtxt}>
-                ₹{total + Math.ceil(0.18 * (total + sum)) + sum}
+                ₹{totalSum() + Math.ceil(0.18 * (totalSum()))}
               </Text>
             </View>
           </View>
