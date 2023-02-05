@@ -155,6 +155,7 @@ const Menu = () => {
       </View>
       <FlatList
         data={menu}
+        style={{ marginBottom: 60 }}
         renderItem={({ item }) => (
           <MenuItem
             menu={item}
@@ -194,7 +195,7 @@ const styles = StyleSheet.create({
   },
   placeOrderButton: {
     position: "absolute",
-    bottom: 100,
+    bottom: 80,
     backgroundColor: "#ec4747",
     padding: 10,
     borderRadius: 20,
@@ -207,6 +208,9 @@ const styles = StyleSheet.create({
     color: "#fff",
     marginRight: 10,
   },
+  flist: {
+    marginBottom: 20
+  }
 });
 
 export default Menu;
