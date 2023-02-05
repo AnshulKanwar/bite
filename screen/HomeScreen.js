@@ -1,12 +1,11 @@
-import { StyleSheet, View, Text, SafeAreaView, StatusBar } from "react-native";
-import MutedText from "../components/MutedText";
+import { StyleSheet, Text, SafeAreaView, StatusBar } from "react-native";
 import RestaurantsList from "../components/RestaurantList";
 
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.AndroidSafeArea}>
       <Text style={styles.logo}>Bite.</Text>
-      <Text style={styles.greeting}>Good Morning, Chad</Text>
+      <Text style={styles.greeting}>Good Morning, Kunal</Text>
       <RestaurantsList />
     </SafeAreaView>
   );

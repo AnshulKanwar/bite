@@ -10,9 +10,13 @@ const MenuItem = ({ menu, toggleOrder, handleItem }) => {
   const [number, setNumber] = useState(0);
 
   const increment = (n) => {
+    if (number === 0 && number + n >= 0) {
+      toggleOrder();
+    } else if (number >= 0 && number + n <= 0) {
+      toggleOrder();
+    }
     if (number + n >= 0) {
-      toggleOrder()
-      handleItem(id, number + n)
+      handleItem(id, number + n);
       setNumber((prev) => prev + n);
     }
   };
@@ -32,8 +36,7 @@ const MenuItem = ({ menu, toggleOrder, handleItem }) => {
         </View>
         <Stepper number={number} increment={increment} />
       </View>
-      <View>
-      </View>
+      <View></View>
     </View>
   );
 };
