@@ -4,21 +4,27 @@ import ProgressBar from "../components/ProgressBar";
 const logs = [
   {
     id: 1,
-    name: "Fruit Chat",
-    quantity: 1,
-    calories: 70,
+    name: "Cheese French Fries",
+    quantity: 2,
+    calories: 220,
   },
   {
     id: 2,
-    name: "Butter Chicken",
-    quantity: 1,
-    calories: 600,
+    name: "Hot Coffee",
+    quantity: 2,
+    calories: 60,
   },
   {
     id: 3,
-    name: "Tea",
+    name: "Spring Roll",
+    quantity: 2,
+    calories: 240,
+  },
+  {
+    id: 4,
+    name: "Masala Tea",
     quantity: 1,
-    calories: 40,
+    calories: 20,
   },
 ];
 
@@ -29,7 +35,7 @@ const CalorieTrackerScreen = () => {
         Great job! Chad. You had overall healthy meals today.
       </Text>
       <View style={styles.card}>
-        <Text style={styles.calories}>710 Cal</Text>
+        <Text style={styles.calories}>640 Cal</Text>
         <View style={styles.row}>
           <View>
             <Text>Protein: 43%</Text>
