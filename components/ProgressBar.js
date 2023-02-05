@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     height: 6,
   },
   fill: {
-    backgroundColor: "#f3d062",
+    backgroundColor: "#DF1995",
     height: 6,
     borderRadius: 999,
   }

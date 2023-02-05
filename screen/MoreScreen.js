@@ -11,6 +11,10 @@ const MoreScreen = ({ navigation }) => {
         <Text style={styles.title}>Calorie Tracker</Text>
         <Text>Track your daily calories consumed in restaurants</Text>
       </Pressable>
+      <Pressable onPress={() => navigation.navigate("Order History")} style={styles.feature}>
+        <Text style={styles.title}>Order History</Text>
+        <Text>View previous orders and track your spendings</Text>
+      </Pressable>
     </View>
   );
 };
