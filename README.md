@@ -18,7 +18,7 @@ With **Bite.**, you can easily **pay for your food** using your **phone**, **tra
 2. **Order Ahead**: A feature that allows users to place an order in advance and skip the line when they arrive at the dining facility.
 3. **Menu Information**: A feature that provides users with the daily menu, including information on ingredients and allergens.
 4. **Special Diet Options**: A feature that helps users with special dietary needs, such as vegetarian, vegan, gluten-free, and others, to easily find meals that meet their requirements.
-5. s: A feature that promotes sustainability by offering incentives for users who choose eco-friendly options, such as reusable containers, or who reduce food waste by taking only what they can eat.
+5. **Green Initiatives**: A feature that promotes sustainability by offering incentives for users who choose eco-friendly options, such as reusable containers, or who reduce food waste by taking only what they can eat.
 6. **Nutrition Information**: A feature that provides users with nutritional information for each meal, including calorie counts and macronutrient ratios.
 7. **Dining Hall Locations**: A feature that provides users with the location and hours of operation for each dining hall, restaurant, and cafe on campus.
 8. **Push Notifications**: A feature that provides users with real-time updates, such as menu changes, special promotions, and other relevant information.
